@@ -36,6 +36,12 @@ return require("packer").startup(function(use)
 	})
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
 		requires = {
@@ -99,8 +105,8 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
-    use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
-    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
-    use 'romgrk/barbar.nvim'
+	use("nvim-tree/nvim-web-devicons") -- OPTIONAL: for file icons
+	use("lewis6991/gitsigns.nvim") -- OPTIONAL: for git status
+	use("romgrk/barbar.nvim")
+	use("rescript-lang/vim-rescript")
 end)
-
