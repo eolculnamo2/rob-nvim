@@ -12,4 +12,13 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
 vim.keymap.set("n", "<S-h>", "<Cmd>BufferPrevious<CR>")
 vim.keymap.set("n", "<S-l>", "<Cmd>BufferNext<CR>")
 vim.keymap.set("n", "<S-i>", "<Cmd>BufferPick<CR>")
+
+-- LSP
 vim.keymap.set("n", "<leader>/", "gcc")
+vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
+
+vim.keymap.set("n", "<leader>ba", "<Cmd>BufferCloseAllButVisible<CR>")
+vim.keymap.set("n", "<leader>bA", "<Cmd>BufferWipeout<CR>")
+vim.keymap.set("n", "<leader>bl", "<Cmd>BufferCloseBuffersLeft<CR>")
+vim.keymap.set("n", "<leader>br", "<Cmd>BufferCloseBuffersRight<CR>")
