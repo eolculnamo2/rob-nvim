@@ -116,12 +116,6 @@ _G.packer_plugins = {
     path = "/Users/robbertram/.local/share/nvim/site/pack/packer/start/elm-vim",
     url = "https://github.com/ElmCast/elm-vim"
   },
-  ["eslint.nvim"] = {
-    config = { "\27LJ\2\nÂ\2\0\0\b\0\15\0\0226\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0B\2\1\0019\2\3\0015\4\4\0005\5\5\0005\6\6\0005\a\a\0=\a\b\6=\6\t\0055\6\n\0=\6\v\5=\5\f\0045\5\r\0=\5\14\4B\2\2\1K\0\1\0\16diagnostics\1\0\3\vrun_on\ttype\venable\2%report_unused_disable_directives\1\17code_actions\25disable_rule_comment\1\0\2\rlocation\18separate_line\venable\2\18apply_on_save\ntypes\1\5\0\0\14directive\fproblem\15suggestion\vlayout\1\0\1\venable\2\1\0\1\venable\2\1\0\1\bbin\veslint\nsetup\veslint\fnull-ls\frequire\0" },
-    loaded = true,
-    path = "/Users/robbertram/.local/share/nvim/site/pack/packer/start/eslint.nvim",
-    url = "https://github.com/MunifTanjim/eslint.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/robbertram/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -159,7 +153,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
   neorg = {
-    config = { "\27LJ\2\nè\3\0\0\a\0\22\0#6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0004\5\0\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\6\0'\4\a\0004\5\0\0B\0\5\0016\0\b\0'\2\t\0B\0\2\0029\0\n\0005\2\20\0005\3\v\0004\4\0\0=\4\f\0034\4\0\0=\4\r\0035\4\17\0005\5\15\0005\6\14\0=\6\16\5=\5\18\4=\4\19\3=\3\21\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\1\22default_workspace\twork\1\0\3\thome\17~/notes/home\twork\17~/notes/work\tkast\17~/notes/kast\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\23:Neorg return <CR>\15<leader>zr\22:Neorg index <CR>\15<leader>zi\6n\bset\vkeymap\bvim\0" },
+    config = { "\27LJ\2\nè\3\0\0\a\0\22\0#6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0004\5\0\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\6\0'\4\a\0004\5\0\0B\0\5\0016\0\b\0'\2\t\0B\0\2\0029\0\n\0005\2\20\0005\3\v\0004\4\0\0=\4\f\0034\4\0\0=\4\r\0035\4\17\0005\5\15\0005\6\14\0=\6\16\5=\5\18\4=\4\19\3=\3\21\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\1\22default_workspace\twork\1\0\3\thome\17~/notes/home\tkast\17~/notes/kast\twork\17~/notes/work\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\23:Neorg return <CR>\15<leader>zr\22:Neorg index <CR>\15<leader>zi\6n\bset\vkeymap\bvim\0" },
     loaded = true,
     path = "/Users/robbertram/.local/share/nvim/site/pack/packer/start/neorg",
     url = "https://github.com/nvim-neorg/neorg"
@@ -169,15 +163,15 @@ _G.packer_plugins = {
     path = "/Users/robbertram/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/Users/robbertram/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/robbertram/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-jdtls"] = {
+    loaded = true,
+    path = "/Users/robbertram/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
+    url = "https://github.com/mfussenegger/nvim-jdtls"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -249,22 +243,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: eslint.nvim
-time([[Config for eslint.nvim]], true)
-try_loadstring("\27LJ\2\nÂ\2\0\0\b\0\15\0\0226\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0B\2\1\0019\2\3\0015\4\4\0005\5\5\0005\6\6\0005\a\a\0=\a\b\6=\6\t\0055\6\n\0=\6\v\5=\5\f\0045\5\r\0=\5\14\4B\2\2\1K\0\1\0\16diagnostics\1\0\3\vrun_on\ttype\venable\2%report_unused_disable_directives\1\17code_actions\25disable_rule_comment\1\0\2\rlocation\18separate_line\venable\2\18apply_on_save\ntypes\1\5\0\0\14directive\fproblem\15suggestion\vlayout\1\0\1\venable\2\1\0\1\venable\2\1\0\1\bbin\veslint\nsetup\veslint\fnull-ls\frequire\0", "config", "eslint.nvim")
-time([[Config for eslint.nvim]], false)
--- Config for: neorg
-time([[Config for neorg]], true)
-try_loadstring("\27LJ\2\nè\3\0\0\a\0\22\0#6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0004\5\0\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\6\0'\4\a\0004\5\0\0B\0\5\0016\0\b\0'\2\t\0B\0\2\0029\0\n\0005\2\20\0005\3\v\0004\4\0\0=\4\f\0034\4\0\0=\4\r\0035\4\17\0005\5\15\0005\6\14\0=\6\16\5=\5\18\4=\4\19\3=\3\21\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\1\22default_workspace\twork\1\0\3\thome\17~/notes/home\twork\17~/notes/work\tkast\17~/notes/kast\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\23:Neorg return <CR>\15<leader>zr\22:Neorg index <CR>\15<leader>zi\6n\bset\vkeymap\bvim\0", "config", "neorg")
-time([[Config for neorg]], false)
 -- Config for: onedark
 time([[Config for onedark]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0", "config", "onedark")
 time([[Config for onedark]], false)
--- Config for: leap.nvim
-time([[Config for leap.nvim]], true)
-try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
-time([[Config for leap.nvim]], false)
+-- Config for: oil.nvim
+time([[Config for oil.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
+time([[Config for oil.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
@@ -273,10 +259,14 @@ time([[Config for alpha-nvim]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: oil.nvim
-time([[Config for oil.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
-time([[Config for oil.nvim]], false)
+-- Config for: neorg
+time([[Config for neorg]], true)
+try_loadstring("\27LJ\2\nè\3\0\0\a\0\22\0#6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0004\5\0\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\6\0'\4\a\0004\5\0\0B\0\5\0016\0\b\0'\2\t\0B\0\2\0029\0\n\0005\2\20\0005\3\v\0004\4\0\0=\4\f\0034\4\0\0=\4\r\0035\4\17\0005\5\15\0005\6\14\0=\6\16\5=\5\18\4=\4\19\3=\3\21\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\1\22default_workspace\twork\1\0\3\thome\17~/notes/home\tkast\17~/notes/kast\twork\17~/notes/work\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\23:Neorg return <CR>\15<leader>zr\22:Neorg index <CR>\15<leader>zi\6n\bset\vkeymap\bvim\0", "config", "neorg")
+time([[Config for neorg]], false)
+-- Config for: leap.nvim
+time([[Config for leap.nvim]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
+time([[Config for leap.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
