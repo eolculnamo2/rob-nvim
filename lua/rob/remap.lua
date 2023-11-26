@@ -16,6 +16,7 @@ vim.keymap.set("n", "<S-i>", "<Cmd>BufferPick<CR>")
 -- LSP
 vim.keymap.set("n", "<leader>/",
     function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end)
+vim.keymap.set("v", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>")
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
 -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
