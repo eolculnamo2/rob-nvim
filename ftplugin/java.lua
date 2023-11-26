@@ -2,7 +2,6 @@ local home = os.getenv('HOME')
 local root_markers = { 'gradlew', 'mvnw', '.git' }
 local root_dir = require('jdtls.setup').find_root(root_markers)
 local workspace_dir = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
-print(workspace_dir)
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -31,11 +30,11 @@ local config = {
                 runtimes = {
                     {
                         name = "JavaSE-11",
-                        path = "/Users/robbertram/.jabba/jdk/openjdk@1.11.0-2/Contents/Home/",
+                        path = home .. "/.jabba/jdk/openjdk@1.11.0-2/Contents/Home/",
                     },
                     {
                         name = "JavaSE-17",
-                        path = "/Users/robbertram/.jabba/jdk/openjdk@1.17.0/Contents/Home/",
+                        path = home .. "/.jabba/jdk/openjdk@1.17.0/Contents/Home/",
                     }
                 }
             }
