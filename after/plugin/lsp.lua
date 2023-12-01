@@ -10,10 +10,9 @@ local lsp_format_on_save = function(bufnr)
         group = augroup,
         buffer = bufnr,
         callback = function()
-
             if jdtls_status then
                 jdtls.organize_imports()
-             end
+            end
             vim.lsp.buf.format({ bufnr = bufnr })
         end,
 
@@ -43,6 +42,12 @@ lsp_zero.on_attach(function(client, bufnr)
     -- to learn the available actions
     lsp_zero.default_keymaps({ buffer = bufnr })
     lsp_format_on_save(bufnr)
+
+    if vim.bo.filetype == "java" then
+        vim.opt.expandtab = false
+    else
+        vim.opt.expandtab = true
+    end
 end)
 require("mason").setup({})
 require("mason-lspconfig").setup({
