@@ -1,6 +1,7 @@
 local lsp_zero = require("lsp-zero")
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
+local jdtls_status, jdtls = pcall(require, "jdtls")
 
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 local lsp_format_on_save = function(bufnr)
@@ -9,6 +10,10 @@ local lsp_format_on_save = function(bufnr)
         group = augroup,
         buffer = bufnr,
         callback = function()
+
+            if jdtls_status then
+                jdtls.organize_imports()
+             end
             vim.lsp.buf.format({ bufnr = bufnr })
         end,
 

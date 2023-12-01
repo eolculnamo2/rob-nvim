@@ -2,9 +2,33 @@ local home = os.getenv('HOME')
 local root_markers = { 'gradlew', 'mvnw', '.git' }
 local root_dir = require('jdtls.setup').find_root(root_markers)
 local workspace_dir = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+local jdtls = require('jdtls')
+
+function nnoremap(rhs, lhs, bufopts, desc)
+    bufopts.desc = desc
+    vim.keymap.set("n", rhs, lhs, bufopts)
+end
+
+local on_attach = function(client, bufnr)
+    -- Regular Neovim LSP client keymappings
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, bufopts, "Add workspace folder")
+    nnoremap('<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts, "Remove workspace folder")
+    nnoremap('<space>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts, "List workspace folders")
+
+    -- Java extensions provided by jdtls
+    nnoremap("<space>oi", jdtls.organize_imports, bufopts, "Organize imports")
+    nnoremap("<space>ev", jdtls.extract_variable, bufopts, "Extract variable")
+    nnoremap("<space>ec", jdtls.extract_constant, bufopts, "Extract constant")
+    vim.keymap.set('v', "<space>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
+        { noremap = true, silent = true, buffer = bufnr, desc = "Extract method" })
+end
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
+    on_attach = on_attach,
     -- The command that starts the language server
     -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
     cmd = {
@@ -25,6 +49,8 @@ local config = {
     root_dir = root_dir,
 
     settings = {
+        ['java.format.settings.url'] = home .. "/code/dev-preferences/eclipse/resi-vim.xml",
+        -- ['java.format.settings.profile'] = "Resi",
         java = {
             configuration = {
                 runtimes = {
