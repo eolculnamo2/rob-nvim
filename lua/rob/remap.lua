@@ -21,6 +21,8 @@ vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
 -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
 
+vim.keymap.set("n", "<leader>bi", "<Cmd>BufferPick<CR>")
+vim.keymap.set("n", "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>")
 vim.keymap.set("n", "<leader>ba", "<Cmd>BufferCloseAllButVisible<CR>")
 vim.keymap.set("n", "<leader>bA", "<Cmd>BufferWipeout<CR>")
 vim.keymap.set("n", "<leader>bl", "<Cmd>BufferCloseBuffersLeft<CR>")

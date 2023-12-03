@@ -59,6 +59,11 @@ return require("packer").startup(function(use)
             { "L3MON4D3/LuaSnip" },
         },
     })
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { { "nvim-lua/plenary.nvim" } }
+    }
     use({
         "stevearc/oil.nvim",
         config = function()
