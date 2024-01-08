@@ -13,6 +13,27 @@ return require("packer").startup(function(use)
     use("vim-test/vim-test")
     use("ElmCast/elm-vim")
     use("simrat39/rust-tools.nvim")
+    use({
+        "nvim-java/nvim-java",
+        requires = {
+         'nvim-java/lua-async-await',
+            'nvim-java/nvim-java-core',
+            'nvim-java/nvim-java-test',
+            'nvim-java/nvim-java-dap',
+            'MunifTanjim/nui.nvim',
+            'neovim/nvim-lspconfig',
+            'mfussenegger/nvim-dap',
+            {
+              'williamboman/mason.nvim',
+              opts = {
+                registries = {
+                  'github:nvim-java/mason-registry',
+                  'github:mason-org/mason-registry',
+                },
+              },
+            }
+        }
+    })
     use("APZelos/blamer.nvim")
     use({
         "sindrets/diffview.nvim",
