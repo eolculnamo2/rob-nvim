@@ -5,6 +5,8 @@ return require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
     use('mfussenegger/nvim-jdtls')
+    use('ray-x/go.nvim')
+    use('ray-x/guihua.lua')
     use('ThePrimeagen/vim-be-good')
     use("evanleck/vim-svelte")
     use("itchyny/lightline.vim")
