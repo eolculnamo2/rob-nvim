@@ -11,7 +11,7 @@ local lsp_format_on_save = function(bufnr)
         buffer = bufnr,
         callback = function()
             if jdtls_ok then
-                jdtls.organize_imports()
+                -- jdtls.organize_imports()
             end
             vim.lsp.buf.format({ bufnr = bufnr })
         end,
