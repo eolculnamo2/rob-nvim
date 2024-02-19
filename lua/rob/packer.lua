@@ -6,6 +6,8 @@ return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
     use("gleam-lang/gleam.vim")
     use('mfussenegger/nvim-jdtls')
+    use('ray-x/go.nvim')
+    use('ray-x/guihua.lua')
     use('stevearc/dressing.nvim')
     use('ThePrimeagen/vim-be-good')
     use("evanleck/vim-svelte")
@@ -13,7 +15,11 @@ return require("packer").startup(function(use)
     use("MunifTanjim/prettier.nvim")
     use("vim-test/vim-test")
     use("ElmCast/elm-vim")
-    use("simrat39/rust-tools.nvim")
+    use({
+        'mrcjkb/rustaceanvim',
+        version = '^4', -- Recommended
+        ft = { 'rust' }
+    })
     use("APZelos/blamer.nvim")
     use({
         "sindrets/diffview.nvim",
