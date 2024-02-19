@@ -4,6 +4,7 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
+    use("gleam-lang/gleam.vim")
     use('mfussenegger/nvim-jdtls')
     use('stevearc/dressing.nvim')
     use('ThePrimeagen/vim-be-good')
