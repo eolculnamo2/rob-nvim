@@ -1,7 +1,8 @@
 local lsp_zero = require("lsp-zero")
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
-local jdtls_ok, jdtls = pcall(require, "jdtls")
+-- local jdtls_ok, jdtls = pcall(require, "jdtls")
+
 
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 local lsp_format_on_save = function(bufnr)
@@ -10,10 +11,11 @@ local lsp_format_on_save = function(bufnr)
         group = augroup,
         buffer = bufnr,
         callback = function()
-            if jdtls_ok then
-                -- jdtls.organize_imports()
-            end
+            -- if jdtls_ok then
+            --     jdtls.organize_imports()
+            -- end
             vim.lsp.buf.format({ bufnr = bufnr })
+            -- end
         end,
 
     })
@@ -55,9 +57,11 @@ require("mason-lspconfig").setup({
         "tsserver",
         "eslint",
         "rust_analyzer",
+        "jdtls",
     },
     handlers = {
         lsp_zero.default_setup,
+        jdtls = lsp_zero.noop,
     },
 })
 require("lspconfig").rescriptls.setup({})

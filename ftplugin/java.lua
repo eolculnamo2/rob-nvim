@@ -42,25 +42,36 @@ local config = {
         '--add-modules=ALL-SYSTEM',
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-jar', vim.fn.glob('/opt/homebrew/Cellar/jdtls/1.29.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar'),
-        '-configuration', '/opt/homebrew/Cellar/jdtls/1.29.0/libexec/config_mac',
+        -- THIS VERSIONED PATH GETS MESSED UP
+        '-jar', vim.fn.glob('/opt/homebrew/Cellar/jdtls/1.33.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar'),
+        -- THIS VERSIONED PATH GETS MESSED UP
+        '-configuration', '/opt/homebrew/Cellar/jdtls/1.33.0/libexec/config_mac',
         '-data', workspace_dir
     },
     root_dir = root_dir,
 
     settings = {
-        ['java.format.settings.url'] = home .. "/code/dev-preferences/eclipse/resi-vim.xml",
+        -- ['java.format.settings.url'] = home .. "/code/dev-preferences/eclipse/resi-vim.xml",
         -- ['java.format.settings.profile'] = "Resi",
         java = {
+            format = {
+                settings = {
+                    -- url = home .. "/code/dev-preferences/eclipse/resi-vim.xml"
+                    url = home .. "/code/dev-preferences/eclipse-prefs.xml",
+                    profile = "Resi"
+                }
+            },
             configuration = {
                 runtimes = {
                     {
                         name = "JavaSE-11",
-                        path = home .. "/.jabba/jdk/openjdk@1.11.0-2/Contents/Home/",
+                        -- path = home .. "/.jabba/jdk/openjdk@1.11.0-2/Contents/Home/bin",
+                        path = home .. "/.jabba/jdk/openjdk@1.11.0-2/Contents/Home",
                     },
                     {
                         name = "JavaSE-17",
-                        path = home .. "/.jabba/jdk/openjdk@1.17.0/Contents/Home/",
+                        -- path = home .. "/.jabba/jdk/openjdk@1.17.0/Contents/Home/bin",
+                        path = home .. "/.jabba/jdk/openjdk@1.17.0/Contents/Home",
                     }
                 }
             }
