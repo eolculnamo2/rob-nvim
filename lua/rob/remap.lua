@@ -27,3 +27,4 @@ vim.keymap.set("n", "<leader>ba", "<Cmd>BufferCloseAllButVisible<CR>")
 vim.keymap.set("n", "<leader>bA", "<Cmd>BufferWipeout<CR>")
 vim.keymap.set("n", "<leader>bl", "<Cmd>BufferCloseBuffersLeft<CR>")
 vim.keymap.set("n", "<leader>br", "<Cmd>BufferCloseBuffersRight<CR>")
+vim.keymap.set("n", "<leader>bx", "<Cmd>BufferClose<CR>") -- close current

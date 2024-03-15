@@ -54,6 +54,17 @@ local config = {
         -- ['java.format.settings.url'] = home .. "/code/dev-preferences/eclipse/resi-vim.xml",
         -- ['java.format.settings.profile'] = "Resi",
         java = {
+            cleanup = {
+                -- still not perfect, would be better to import a cleanup xml configuration
+                -- found addFinalModifier on vs code java repo. These don't seem to be documented
+                actions = {
+                    -- this adds final modifier to everything which is too much :(
+                    -- "addFinalModifier"
+                },
+            },
+            saveActions = {
+                cleanup = true,
+            },
             format = {
                 settings = {
                     -- url = home .. "/code/dev-preferences/eclipse/resi-vim.xml"
