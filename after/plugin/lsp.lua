@@ -14,6 +14,7 @@ local lsp_format_on_save = function(bufnr)
             -- if jdtls_ok then
             --     jdtls.organize_imports()
             -- end
+            -- if jdtls_ok == false then
             vim.lsp.buf.format({ bufnr = bufnr })
             -- end
         end,
@@ -65,3 +66,4 @@ require("mason-lspconfig").setup({
     },
 })
 require("lspconfig").rescriptls.setup({})
+require("lspconfig").gleam.setup({})

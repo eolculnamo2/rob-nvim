@@ -9,6 +9,21 @@ function nnoremap(rhs, lhs, bufopts, desc)
     vim.keymap.set("n", rhs, lhs, bufopts)
 end
 
+function os.capture(cmd, raw)
+    local f = assert(io.popen(cmd, 'r'))
+    local s = assert(f:read('*a'))
+    f:close()
+    if raw then return s end
+    s = string.gsub(s, '^%s+', '')
+    s = string.gsub(s, '%s+$', '')
+    s = string.gsub(s, '[\n\r]+', ' ')
+    return s
+end
+
+function get_jdtls_version()
+
+end
+
 local on_attach = function(client, bufnr)
     -- Regular Neovim LSP client keymappings
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -43,9 +58,9 @@ local config = {
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
         -- THIS VERSIONED PATH GETS MESSED UP
-        '-jar', vim.fn.glob('/opt/homebrew/Cellar/jdtls/1.33.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar'),
+        '-jar', vim.fn.glob('/opt/homebrew/Cellar/jdtls/1.34.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar'),
         -- THIS VERSIONED PATH GETS MESSED UP
-        '-configuration', '/opt/homebrew/Cellar/jdtls/1.33.0/libexec/config_mac',
+        '-configuration', '/opt/homebrew/Cellar/jdtls/1.34.0/libexec/config_mac',
         '-data', workspace_dir
     },
     root_dir = root_dir,
