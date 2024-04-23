@@ -6,7 +6,6 @@ return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
     use("gleam-lang/gleam.vim")
     use('nanotee/zoxide.vim')
-    use("luarocks-nvim.rocks")
 
     -- USED FOR ZOXIDE FUZZY FINDER MENU
     use('nvim-telescope/telescope-ui-select.nvim')
@@ -100,32 +99,40 @@ return require("packer").startup(function(use)
             require("alpha").setup(require("alpha.themes.startify").config)
         end,
     })
+    -- use({
+    --     "nvim-neorg/neorg",
+    --     lazy = false,
+    --     run = ":Neorg sync-parsers",
+    --     rocks = { "lua-utils.nvim", "nvim-nio", "nui.nvim", "plenary.nvim" },
+    --     tag = "*",
+    --     config = function()
+    --         vim.keymap.set("n", "<leader>zi", ":Neorg index <CR>", {})
+    --         vim.keymap.set("n", "<leader>zr", ":Neorg return <CR>", {})
+    --         require("neorg").setup({
+    --             load = {
+    --                 ["core.defaults"] = {},
+    --                 ["core.concealer"] = {},
+    --                 ["core.dirman"] = {
+    --                     config = {
+    --                         workspaces = {
+    --                             work = "~/notes/work",
+    --                             kast = "~/notes/kast",
+    --                             home = "~/notes/home",
+    --                         },
+    --                         default_workspace = "work",
+    --                     },
+    --                 },
+    --             },
+    --         })
+    --     end,
+    -- })
     use({
-        "nvim-neorg/neorg",
-        lazy = false,
-        run = ":Neorg sync-parsers",
-        rocks = { "lua-utils.nvim", "nvim-nio", "nui.nvim", "plenary.nvim" },
+        "epwalsh/obsidian.nvim",
         tag = "*",
-        config = function()
-            vim.keymap.set("n", "<leader>zi", ":Neorg index <CR>", {})
-            vim.keymap.set("n", "<leader>zr", ":Neorg return <CR>", {})
-            require("neorg").setup({
-                load = {
-                    ["core.defaults"] = {},
-                    ["core.concealer"] = {},
-                    ["core.dirman"] = {
-                        config = {
-                            workspaces = {
-                                work = "~/notes/work",
-                                kast = "~/notes/kast",
-                                home = "~/notes/home",
-                            },
-                            default_workspace = "work",
-                        },
-                    },
-                },
-            })
-        end,
+        requires = {
+            "nvim-lua/plenary.nvim",
+            -- see below for full list of optional dependencies 👇
+        },
     })
     use("nvim-tree/nvim-web-devicons") -- OPTIONAL: for file icons
     use("lewis6991/gitsigns.nvim")     -- OPTIONAL: for git status

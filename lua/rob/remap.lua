@@ -28,3 +28,14 @@ vim.keymap.set("n", "<leader>bA", "<Cmd>BufferWipeout<CR>")
 vim.keymap.set("n", "<leader>bl", "<Cmd>BufferCloseBuffersLeft<CR>")
 vim.keymap.set("n", "<leader>br", "<Cmd>BufferCloseBuffersRight<CR>")
 vim.keymap.set("n", "<leader>bx", "<Cmd>BufferClose<CR>") -- close current
+
+-- search
+vim.keymap.set("n", "<leader>os", "<Cmd>ObsidianSearch<CR>")
+-- open
+vim.keymap.set("n", "<leader>oo", "<Cmd>ObsidianOpen<CR>")
+-- today
+vim.keymap.set("n", "<leader>ot", "<Cmd>ObsidianToday<CR>")
+-- dailies
+vim.keymap.set("n", "<leader>od", "<Cmd>ObsidianDailies<CR>")
+-- new
+vim.keymap.set("n", "<leader>on", "<Cmd>ObsidianNew<CR>")
